@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.mail.MessagingException;
 import javax.validation.Valid;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.io.UnsupportedEncodingException;
@@ -72,8 +73,8 @@ public class LoginController {
     @ApiOperation("发送邮箱验证码")
     @CrossOrigin
     @GetMapping("/sendEmailVerificationCode")
-    public String sendEmailVerificationCode(@Valid @NotBlank(message = "Email Address Is Null")
-                                            @RequestParam("loginEmail") String loginEmail) throws UnsupportedEncodingException, MessagingException {
+    public String sendEmailVerificationCode(@Valid @NotBlank(message = "Email Address Is Null") @Email
+                                            @RequestParam("loginEmail")  String loginEmail) throws UnsupportedEncodingException, MessagingException {
         userService.sendEmailVerificationCode(loginEmail);
         return ResultUtil.Success("Send Email Success.");
 

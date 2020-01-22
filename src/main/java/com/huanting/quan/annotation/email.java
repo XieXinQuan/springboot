@@ -11,6 +11,8 @@ import java.lang.annotation.*;
  * @author: xiexinquan520@163.com
  * User: XieXinQuan
  * DATE:2020/1/22
+ *
+ * 现已废弃,已存在javax.validation.constraints.Email
  */
 @Constraint(validatedBy = EmailValidator.class)
 @Target({ElementType.METHOD, ElementType.FIELD})
