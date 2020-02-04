@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
 /**
  * @author: xiexinquan520@163.com
  * User: XieXinQuan
@@ -16,11 +18,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @ComponentScan("com.huanting.quan.aspect")
 @EnableAspectJAutoProxy
 @EnableJpaAuditing
-//@EnableWebMvc
 @EnableScheduling
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.huanting.quan.controller"})
-//@EnableAdminServer
+@EnableTransactionManagement
 public class QuanApplication {
 
 	public static void main(String[] args) {

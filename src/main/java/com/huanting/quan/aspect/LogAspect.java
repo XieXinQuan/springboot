@@ -1,17 +1,21 @@
 package com.huanting.quan.aspect;
 
+import com.huanting.quan.util.ResultUtil;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
+import java.util.Optional;
+
 /**
  * @author: xiexinquan520@163.com
  * User: XieXinQuan
@@ -34,7 +38,7 @@ public class LogAspect {
 
         // 记录下请求内容
         logger.info("Request URL : " + request.getRequestURL().toString());
-        logger.info("Request Mothod: " + request.getMethod());
+        logger.info("Request Method: " + request.getMethod());
         logger.info("Request IP : " + request.getRemoteAddr());
         logger.info("Request Parameter" + Arrays.toString(joinPoint.getArgs()));
 
@@ -43,10 +47,19 @@ public class LogAspect {
     }
     @AfterReturning(returning = "returnOb", pointcut = "controllerLog()")
     public void doAfterReturning(JoinPoint joinPoint, Object returnOb) {
-        logger.info("Request Success Return Data : " + returnOb.toString());
+        logger.info("Request Success Return Data : " + Optional.ofNullable(returnOb).map(Object::toString).orElse("Null"));
     }
     @Around("controllerLog()")
     public Object Around(ProceedingJoinPoint pjp) throws Throwable {
-        return pjp.proceed();
+
+        Object proceed = pjp.proceed();
+
+        RestController annotation = pjp.getTarget().getClass().getAnnotation(RestController.class);
+        if(annotation != null) {
+            return ResultUtil.Success(proceed);
+        }
+
+        return proceed;
+
     }
 }

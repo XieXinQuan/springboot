@@ -8,6 +8,9 @@ public class ResultUtil {
     public static String Success(Object data){
         return JSON.toJSONString(new Result(ResultEnum.Success.getKey(), ResultEnum.Success.getValue(), data));
     }
+    public static String Success(){
+        return Success(null);
+    }
 
     public static String CustomException(Object data){
         return ResultUtil.CustomException(ResultEnum.CustomException.getKey(), ResultEnum.CustomException.getValue(), data);
@@ -34,10 +37,10 @@ public class ResultUtil {
     }
 
     public static String SystemException(String msg){
-        return JSON.toJSONString(new Result(ResultEnum.SystemException.getKey(), msg));
+        return JSON.toJSONString(new Result(ResultEnum.SystemException.getKey(), ResultEnum.SystemException.getValue(), msg));
     }
 
     public static String SystemException(){
-        return SystemException(null);
+        return SystemException(ResultEnum.SystemException.getValue());
     }
 }

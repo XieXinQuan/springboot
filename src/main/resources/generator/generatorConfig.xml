@@ -23,7 +23,7 @@
         </javaTypeResolver>
 
         <!-- 生成模型的包名和位置 -->
-        <javaModelGenerator targetPackage="com.example.quan.entity"
+        <javaModelGenerator targetPackage="com.huanting.quan.entity"
                             targetProject="src\main\java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="false" />
@@ -41,8 +41,8 @@
 <!--        </javaClientGenerator>-->
 
 
-        <table schema="test" tableName="user"
-               domainObjectName="User" enableCountByExample="false"
+        <table schema="test" tableName="friend"
+               domainObjectName="Friend" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
