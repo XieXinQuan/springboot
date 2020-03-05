@@ -75,6 +75,7 @@ public class MessageService extends BaseService{
         ListOperations<String, String> listOperations = redisTemplate.opsForList();
 
         String key = "messageContent";
+        //是会员
         if (isMember){
             key = "vipMessage-" + getCurrentUserId();
         }
