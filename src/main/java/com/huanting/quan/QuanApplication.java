@@ -1,5 +1,6 @@
 package com.huanting.quan;
 
+import org.activiti.spring.boot.SecurityAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -19,12 +20,14 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableAspectJAutoProxy
 @EnableJpaAuditing
 @EnableScheduling
-@SpringBootApplication
+//@SpringBootApplication
 @ComponentScan(basePackages = {"com.huanting.quan.controller"})
 @EnableTransactionManagement
+@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 public class QuanApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(QuanApplication.class, args);
 	}
 

@@ -1,4 +1,4 @@
-﻿package com.huanting.quan.config;
+package com.huanting.quan.config;
 
 import com.huanting.quan.util.SecurityUtils;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +18,10 @@ public class AuditorUserConfig implements AuditorAware<String> {
     @Override
     public Optional<String> getCurrentAuditor() {
 
-        return Optional.ofNullable(SecurityUtils.getCurrentUserName());
+        String currentUserName = SecurityUtils.getCurrentUserName();
+        if (currentUserName != null){
+            return Optional.of(currentUserName);
+        }
+        return Optional.ofNullable("");
     }
 }

@@ -17,6 +17,7 @@ public enum  ResultEnum implements BaseEnum{
     UserIsNotExists(6, "User Is Not Exists"),
     PasswordIsError(7, "Password Is Error"),
     ParameterError(7, "Parameter Error"),
+    ApplicationMember(8, "Go To Member Application"),
     NoRequestMapper(404, "Go To Login"),
     SystemException(500, "System Exception");
     private Integer key;

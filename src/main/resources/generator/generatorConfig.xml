@@ -41,8 +41,8 @@
 <!--        </javaClientGenerator>-->
 
 
-        <table schema="test" tableName="friend"
-               domainObjectName="Friend" enableCountByExample="false"
+        <table schema="test" tableName="member"
+               domainObjectName="Member" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false">
         </table>

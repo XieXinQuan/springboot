@@ -34,8 +34,8 @@ public interface FriendRepository extends JpaRepository<Friend, Long> {
      * @param status
      * @return
      */
-    @Query(value = "SELECT f.id as id, f.APPLICATION_REASON as applicationReason, " +
-            "ut.NAME as applicationUserName, f.CREATE_TIME as applicationTime FROM friend f " +
+    @Query(value = "SELECT f.id as id, f.APPLICATION_REASON as content, " +
+            "ut.NAME as name, f.CREATE_TIME as time FROM friend f " +
             " LEFT JOIN user u on f.FRIEND_ID = u.ID " +
             " left JOIN user ut on f.USER_ID = ut.id " +
             "  where u.id = ?1 and f.STATUS = ?2  ", nativeQuery = true)

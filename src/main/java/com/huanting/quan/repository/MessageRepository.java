@@ -4,6 +4,7 @@ import com.huanting.quan.entity.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,6 +15,8 @@ import java.util.List;
 @Repository
 public interface MessageRepository extends JpaRepository<Message, Long> {
 
+    Message findAllByUserIdAndReceiveUserIdAndContentAndCreateTime(Long userId, Long receiveUserId, String Content, Date createTime);
+
     /**
      * 用于保存Redis存的消息
      * @param iterable
@@ -22,6 +25,8 @@ public interface MessageRepository extends JpaRepository<Message, Long> {
      */
     @Override
     <S extends Message> List<S> saveAll(Iterable<S> iterable);
+
+
 
     /**
      * 保存消息

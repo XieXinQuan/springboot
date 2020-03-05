@@ -1,9 +1,12 @@
 package com.huanting.quan.service;
 
+import com.huanting.quan.Enum.ResultEnum;
 import com.huanting.quan.entity.User;
+import com.huanting.quan.exception.GlobalException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
 /**
@@ -36,6 +39,14 @@ public class BaseService {
 
     public String getCurrentUserName(){
         return Optional.ofNullable(getCurrentUser()).map(User::getName).orElse("");
+    }
+
+    public HttpSession getSession(){
+        if (checkSessionOutDue()) {
+            throw new GlobalException(ResultEnum.GoToLogin.getKey());
+        }
+        return request.getSession();
+
     }
 
 }

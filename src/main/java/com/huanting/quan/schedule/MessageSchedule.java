@@ -12,9 +12,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author: xiexinquan520@163.com
@@ -33,33 +31,53 @@ public class MessageSchedule {
     @Resource
     MessageRepository messageRepository;
 
-    @Scheduled(fixedRate = 60000L)
+    private String redisMessageKey = "messageContent";
+    private String redisVipMessageKey = "vipMessage-*";
+    public static String redisVipMessageKeyPrefix = "vipMessage-";
+
+
+    @Scheduled(fixedRate = 10000L)
     private void monitorRedisMessageSize(){
-        Long messageContent = redisTemplate.opsForList().size("messageContent");
-        if(messageContent >= Constant.batchSaveMessageSize){
-            redisMessageToDb();
+        Long messageSize = redisTemplate.opsForList().size(this.redisMessageKey);
+        if(messageSize >= Constant.batchSaveMessageSize){
+            redisMessageToDb(redisMessageRead(this.redisMessageKey));
         }
+        Set<String> keys = redisTemplate.keys(this.redisVipMessageKey);
+        Long messageVipSize = getVipMessageSize(keys);
 
-
+        if(messageVipSize >= Constant.batchSaveMessageSize){
+            redisMessageToDb(getNextValue(keys));
+        }
     }
 
-    private void redisMessageToDb(){
+    private Long getVipMessageSize(Set<String> keys){
+        Long count = 0L;
+        for (String key : keys){
+            count += redisTemplate.opsForList().size(key);
+        }
+        return count;
+    }
 
-        Long startTime = System.currentTimeMillis();
-        logger.info("Message Schedule Start....");
+    private List<Object> redisMessageRead(String key){
+
 
         List<Object> list = new ArrayList<>();
 
         Object messageContent = null;
-        while((messageContent = getNextValue()) != null){
+        while((messageContent = getNextValue(key)) != null){
 
             list.add(messageContent);
             if(list.size() >= Constant.batchSaveMessageSize){
                 break;
             }
         }
+        return list;
+    }
+    private void redisMessageToDb(List<Object> list){
 
-        Date date ;
+        Long startTime = System.currentTimeMillis();
+        logger.info("Message Schedule Start....");
+
         List<Message> messages = new ArrayList<>();
         Message message ;
         JSONObject jsonObject ;
@@ -83,9 +101,27 @@ public class MessageSchedule {
         logger.info("Message Schedule End....");
     }
 
-    private Object getNextValue(){
-        return redisTemplate.opsForList().rightPop("messageContent");
+    private List<Object> getNextValue(Set<String> keys){
+        List<Object> list = new ArrayList<>();
+        for (String key : keys){
+            Object object = null;
+            while ((object = getNextValue(key)) != null){
+                if (checkIsBeyond(list)) {
+                    list.add(object);
+                    return list;
+                }
+            }
+        }
+        return list;
     }
+    private boolean checkIsBeyond(List list){
+        Integer size = Optional.ofNullable(list).map(List::size).orElse(0);
+        return size > Constant.batchSaveMessageSize - 1;
+    }
+    private Object getNextValue(String key){
+        return redisTemplate.opsForList().rightPop(key);
+    }
+
 
 
 

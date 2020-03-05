@@ -26,7 +26,9 @@ import java.util.Optional;
 public class LogAspect {
     private final Logger logger = LoggerFactory.getLogger(LogAspect.class);
 
-    //切入点描述 这个是controller包的切入点
+    /**
+    切入点描述 这个是controller包的切入点
+     */
     @Pointcut("execution(public * com.huanting.quan.controller..*.*(..))")
     public void controllerLog(){}//签名，可以理解成这个切入点的一个名称
 
