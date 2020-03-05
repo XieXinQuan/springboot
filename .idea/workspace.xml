@@ -9,6 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c0d8c083-3fdb-427d-8b74-4b2ca75e18ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huanting/quan/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huanting/quan/service/MessageService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +291,7 @@
       <workItem from="1583229333477" duration="8217000" />
       <workItem from="1583306752514" duration="494000" />
       <workItem from="1583318810695" duration="8403000" />
-      <workItem from="1583409947445" duration="5230000" />
+      <workItem from="1583409947445" duration="5879000" />
     </task>
     <task id="LOCAL-00001" summary="提交一些类">
       <created>1579700850574</created>
@@ -397,7 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583416120549</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Merge branch 'master' of https://github.com/XieXinQuan/springboot&#10;&#10;# Conflicts:&#10;#&#9;README.md">
+      <created>1583418209252</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1583418209252</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +462,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="提交一些类" />
     <MESSAGE value="Merge branch 'master' of https://github.com/XieXinQuan/springboot&#10;&#10;# Conflicts:&#10;#&#9;README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/XieXinQuan/springboot&#10;&#10;# Conflicts:&#10;#&#9;README.md" />
+    <MESSAGE value="提交类" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交类" />
   </component>
   <component name="WindowStateProjectService">
     <state x="787" y="119" key="#Assign_Data_Sources" timestamp="1580188463114">
@@ -501,10 +510,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="623" y="199" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1583241417417" />
-    <state x="368" y="0" key="CommitChangelistDialog2" timestamp="1583417927926">
+    <state x="368" y="0" key="CommitChangelistDialog2" timestamp="1583418244991">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="368" y="0" key="CommitChangelistDialog2/0.0.1920.1032@0.0.1920.1032" timestamp="1583417927926" />
+    <state x="368" y="0" key="CommitChangelistDialog2/0.0.1920.1032@0.0.1920.1032" timestamp="1583418244991" />
     <state x="686" y="192" key="FileChooserDialogImpl" timestamp="1580831644356">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -581,10 +590,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="513" y="0" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1583413909309" />
-    <state x="252" y="192" key="Vcs.Push.Dialog.v2" timestamp="1583416128566">
+    <state x="252" y="192" key="Vcs.Push.Dialog.v2" timestamp="1583418218455">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="252" y="192" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1583416128566" />
+    <state x="252" y="192" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1583418218455" />
     <state x="574" y="300" key="com.intellij.ide.util.TipDialog" timestamp="1575638870819">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
