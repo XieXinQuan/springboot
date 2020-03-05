@@ -9,7 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c0d8c083-3fdb-427d-8b74-4b2ca75e18ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,7 +290,7 @@
       <workItem from="1583229333477" duration="8217000" />
       <workItem from="1583306752514" duration="494000" />
       <workItem from="1583318810695" duration="8403000" />
-      <workItem from="1583409947445" duration="4222000" />
+      <workItem from="1583409947445" duration="5230000" />
     </task>
     <task id="LOCAL-00001" summary="提交一些类">
       <created>1579700850574</created>
@@ -391,7 +390,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583415692128</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Merge branch 'master' of https://github.com/XieXinQuan/springboot&#10;&#10;# Conflicts:&#10;#&#9;README.md">
+      <created>1583416120549</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1583416120549</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,10 +501,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="623" y="199" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1583241417417" />
-    <state x="368" y="0" key="CommitChangelistDialog2" timestamp="1583415691623">
+    <state x="368" y="0" key="CommitChangelistDialog2" timestamp="1583417927926">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="368" y="0" key="CommitChangelistDialog2/0.0.1920.1032@0.0.1920.1032" timestamp="1583415691623" />
+    <state x="368" y="0" key="CommitChangelistDialog2/0.0.1920.1032@0.0.1920.1032" timestamp="1583417927926" />
     <state x="686" y="192" key="FileChooserDialogImpl" timestamp="1580831644356">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -575,10 +581,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="513" y="0" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1583413909309" />
-    <state x="760" y="211" key="Vcs.Push.Dialog.v2" timestamp="1583415694697">
+    <state x="252" y="192" key="Vcs.Push.Dialog.v2" timestamp="1583416128566">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="760" y="211" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1583415694697" />
+    <state x="252" y="192" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1583416128566" />
     <state x="574" y="300" key="com.intellij.ide.util.TipDialog" timestamp="1575638870819">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
